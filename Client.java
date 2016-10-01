@@ -12,7 +12,7 @@ public class Client{
 
                 socket = new Socket(args[1], port);
                 System.err.println("Connected to " + args[1] + " on port " + port);               
-                new ReadWriteThread(System.in, socket.getOutputStream(), "–-> ").start();
+                new ReadWriteThread(System.in, socket.getOutputStream(), "").start();
                 new ReadWriteThread(socket.getInputStream(), System.out, "–-> ").start();         
             } catch (Exception e) {
                 e.printStackTrace();

@@ -14,7 +14,7 @@ public class Server {
             Socket socket = serverSocket.accept();             
             System.err.println("Accepted connection on port " + port);
 
-            new ReadWriteThread(System.in, socket.getOutputStream(), "–-> ").start();   
+            new ReadWriteThread(System.in, socket.getOutputStream(), "").start();   
             new ReadWriteThread(socket.getInputStream(), System.out, "–-> ").start();
                     
         } catch (Exception e) {        
